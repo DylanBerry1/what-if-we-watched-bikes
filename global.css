@@ -1,0 +1,95 @@
+html,
+body {
+  margin: 0;
+  padding: 5;
+  height: 100%;
+  width: 100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+#map {
+  width: 70%; /* Adjust width to your desired size */
+  height: 70%; /* Adjust height to your desired size */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for effect */
+  border-radius: 8px; /* Optional: rounded corners */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+#map svg {
+  position:absolute;
+  z-index:1;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+#time-slider {
+    justify-content:right;
+}
+.timer {
+    justify-content:center;
+    align-items: center;
+}
+
+circle {
+    --color-departures: steelblue;
+    --color-arrivals: darkorange;
+    --color: color-mix(
+    in oklch,
+    var(--color-departures) calc(100% * var(--departure-ratio)),
+    var(--color-arrivals)
+    );
+    fill: var(--color);
+
+}
+.legend {
+    display: flex;
+
+    
+}
+.subunit1 {
+    --color: color-mix(
+    in oklch,
+    var(--color-departures) calc(100% * var(--departure-ratio)),
+    var(--color-arrivals)
+    );
+    background-color: steelblue;
+    padding-left:1em;
+    size:110%;
+    padding-right:1em;
+    
+}
+.subunit2 {
+    --color-departures: steelblue;
+    --color-arrivals: darkorange;
+    --color: color-mix(
+    in oklch,
+    var(--color-departures),
+    var(--color-arrivals)
+    );
+    background-color: var(--color);
+    padding-left:1em;
+    padding-right:1em;
+    size:110%;
+}
+.subunit3 {
+    background-color: var(--color);
+    padding-left:1em;
+    size:110%;
+    --color: color-mix(
+    in oklch,
+    var(--color-departures) calc(100% * var(--departure-ratio)),
+    var(--color-arrivals)
+    );
+    background-color: darkorange;
+    padding-left:1em;
+    size:110%;
+    padding-right:1em;
+    
+    
+}
